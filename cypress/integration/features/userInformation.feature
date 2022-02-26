@@ -4,3 +4,4 @@ Feature: User information
         When I click on the edit button of Alden Cantrell
         And I fill all the spaces of Registration Form
         And I confirm the filling of spaces
+        Then I validate the changes
