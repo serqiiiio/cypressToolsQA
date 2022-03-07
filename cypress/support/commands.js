@@ -1,13 +1,13 @@
-import RegistrationForm from "../integration/pageObject/registrationForm";
+import {
+  RegistrationFormStrategyManager,
+  fieldClassLookup,
+} from "../integration/strategy/registrationForm";
 
-Cypress.Commands.add(
-  "fillRegistrationForm",
-  (firstName, lastName, userEmail, age, salary, department) => {
-    RegistrationForm.userName().clear().type(firstName);
-    RegistrationForm.lastName().clear().type(lastName);
-    RegistrationForm.userEmail().clear().type(userEmail);
-    RegistrationForm.age().clear().type(age);
-    RegistrationForm.salary().clear().type(salary);
-    RegistrationForm.department().clear().type(department);
+Cypress.Commands.add("fillRegistrationForm", (tableObjectValues) => {
+  const registrationFormStrategy = new RegistrationFormStrategyManager();
+  for (const key in tableObjectValues) {
+    cy.log(key);
+    registrationFormStrategy.setStrategy(fieldClassLookup[key]);
+    registrationFormStrategy.fillValue(tableObjectValues[key]);
   }
-);
+});
