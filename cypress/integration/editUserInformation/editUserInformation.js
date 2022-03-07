@@ -6,6 +6,7 @@ When(
   "I edit the user information with the following information",
   (dataTable) => {
     const infoTable = dataTable.rowsHash();
+    cy.writeFile("cypress/fixtures/writeFiles/tableComplete.json", infoTable);
     UserInfo.clickEditBtnAlden().click();
     cy.fillRegistrationForm(infoTable);
     RegistrationForm.confirmationBtn().click();
