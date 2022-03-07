@@ -5,4 +5,3 @@ const url = env.test.url;
 Given("I am in webtables page", () => {
   cy.visit(url);
 });
-cy.log("hola mundo");

@@ -1,6 +1,6 @@
 import { When } from "cypress-cucumber-preprocessor/steps";
-import CreateUser from "../pageObject/createUser";
-import RegistrationForm from "../pageObject/registrationForm";
+import CreateUser from "../ui/locators/createUser";
+import RegistrationForm from "../ui/locators/registrationForm";
 
 When("I create a new user with the following information", (dataTable) => {
   const infoTable = dataTable.rowsHash();

@@ -1,11 +1,11 @@
 import {
   RegistrationFormStrategyManager,
   fieldClassLookup
-} from "../integration/strategy/registrationForm";
+} from "../integration/ui/registrationForm";
 import {
   UserVerifyTextStrategyManager,
   userDataClassLookup
-} from "../integration/strategy/verifyUserData";
+} from "../integration/ui/verifyUserData";
 
 Cypress.Commands.add("fillRegistrationForm", (tableObjectValues) => {
   const registrationFormStrategy = new RegistrationFormStrategyManager();
