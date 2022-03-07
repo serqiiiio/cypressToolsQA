@@ -1,4 +1,4 @@
-import RegistrationForm from "../pageObject/registrationForm";
+import RegistrationForm from "./locators/registrationForm";
 
 function FirstName() {
   this.fillValue = (userName) => {

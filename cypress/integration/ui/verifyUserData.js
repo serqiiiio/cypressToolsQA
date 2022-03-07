@@ -1,4 +1,4 @@
-import UserInfo from "../pageObject/userInformation";
+import UserInfo from "../ui/locators/userInformation";
 
 class NewUserfirstName {
   verifyData(data) {
