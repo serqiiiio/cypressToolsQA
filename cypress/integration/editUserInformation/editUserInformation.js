@@ -1,13 +1,17 @@
 import { When, Then } from "cypress-cucumber-preprocessor/steps";
 import UserInfo from "../pageObject/userInformation";
+import RegistrationForm from "../pageObject/registrationForm";
 
-When("I select the user that needs the information changed", () => {
-  UserInfo.clickEditBtnAlden().click();
-});
+When(
+  "I edit the user information with the following information",
+  (dataTable) => {
+    const infoTable = dataTable.rowsHash();
+    UserInfo.clickEditBtnAlden().click();
+    cy.fillRegistrationForm(infoTable);
+    RegistrationForm.confirmationBtn().click();
+  }
+);
 
-//deberia poder llenar los campos con solo 2 o 3 campos
-// no todos solo algunos
-//strategy pattern con los arrow functions
 //tomar clean code o defensive code
 //convenciones analizadores de codigo poner eslint
 

@@ -1,8 +1,7 @@
 Feature: User information
     Scenario: Create user information
         Given I am in webtables page
-        When  I create a new user
-        And I fill the Registration Form
+        When  I create a new user with the following information
             | firstName  | Sergio               |
             | lastName   | Salinas              |
             | email      | serqio.kay@gmail.com |
