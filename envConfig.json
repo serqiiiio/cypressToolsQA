@@ -1,0 +1,6 @@
+{
+  "test": {
+    "browser": "chrome",
+    "url": "https://demoqa.com/webtables"
+  }
+}
