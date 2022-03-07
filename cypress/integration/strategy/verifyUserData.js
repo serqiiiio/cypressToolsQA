@@ -40,9 +40,11 @@ export class UserVerifyTextStrategyManager {
   constructor() {
     this.userData = null;
   }
+
   setStrategy(userData) {
     this.userData = userData;
   }
+
   verifyData(data) {
     this.userData.verifyData(data);
   }
@@ -61,5 +63,5 @@ export const userDataClassLookup = {
   email,
   age,
   salary,
-  department,
+  department
 };

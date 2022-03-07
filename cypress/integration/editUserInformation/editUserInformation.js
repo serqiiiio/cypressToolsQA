@@ -1,4 +1,4 @@
-import { When, Then } from "cypress-cucumber-preprocessor/steps";
+import { When } from "cypress-cucumber-preprocessor/steps";
 import UserInfo from "../pageObject/userInformation";
 import RegistrationForm from "../pageObject/registrationForm";
 
@@ -12,6 +12,3 @@ When(
     RegistrationForm.confirmationBtn().click();
   }
 );
-
-//tomar clean code o defensive code
-//convenciones analizadores de codigo poner eslint

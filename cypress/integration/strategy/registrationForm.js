@@ -40,9 +40,11 @@ export class RegistrationFormStrategyManager {
   constructor() {
     this.textBox = null;
   }
+
   setStrategy(textBox) {
     this.textBox = textBox;
   }
+
   fillValue(value) {
     this.textBox.fillValue(value);
   }
@@ -61,5 +63,5 @@ export const fieldClassLookup = {
   email,
   age,
   salary,
-  department,
+  department
 };
