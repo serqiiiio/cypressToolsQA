@@ -8,9 +8,9 @@ Feature: User information
             | age        | 30                   |
             | salary     | 100000               |
             | department | automation           |
-        Then I verify the changes
+        Then Then I should see the information updated in the table
 
-#     Then I should see the information updated in the table // reivsar BDD and 3 amigos session
+#      // reivsar BDD and 3 amigos session
 
 
 

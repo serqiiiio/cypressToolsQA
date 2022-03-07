@@ -4,32 +4,32 @@ class UserInfo {
       "//div[@class='rt-tr-group'][contains(.,'Alden')] //span[@class='mr-2']"
     );
   }
-  sergioName() {
+  newUserName() {
     return cy.xpath(
       "//div[@class='rt-tr-group'][contains(.,'Sergio')] //div[@class='rt-td'][contains(.,'Sergio')]"
     );
   }
-  sergioLastname() {
+  newUserLastname() {
     return cy.xpath(
       "//div[@class='rt-tr-group'][contains(.,'Sergio')] //div[@class='rt-td'][contains(.,'Salinas')]"
     );
   }
-  sergioAge() {
+  newUserAge() {
     return cy.xpath(
       "//div[@class='rt-tr-group'][contains(.,'Sergio')] //div[@class='rt-td'][contains(.,30)]"
     );
   }
-  sergioEmail() {
+  newUserEmail() {
     return cy.xpath(
       "//div[@class='rt-tr-group'][contains(.,'Sergio')] //div[@class='rt-td'][contains(.,'serqio.kay@gmail.com')]"
     );
   }
-  sergioSalary() {
+  newUserSalary() {
     return cy.xpath(
       "//div[@class='rt-tr-group'][contains(.,'Sergio')] //div[@class='rt-td'][contains(.,'100000')]"
     );
   }
-  sergioDepartment() {
+  newUserDepartment() {
     return cy.xpath(
       "//div[@class='rt-tr-group'][contains(.,'Sergio')] //div[@class='rt-td'][contains(.,'automation')]"
     );
