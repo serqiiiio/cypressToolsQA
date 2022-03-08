@@ -1,8 +1,13 @@
 Feature: User information
     Scenario: Edit user information
         Given I am in webtables page
-        #I have user for update Ver si existe o no
-        #agregar When Alden
+        And I have the UpdateUser user
+            | firstName  | UpdateUser    |
+            | lastName   | Test          |
+            | email      | test@test.com |
+            | age        | 99            |
+            | salary     | 1             |
+            | department | test          |
         When I edit the user information with the following information
             | firstName  | Sergio               |
             | lastName   | Salinas              |
@@ -11,7 +16,7 @@ Feature: User information
             | salary     | 100000               |
             | department | automation           |
         Then I should see the information updated in the table
-#borrar Sergio user
+
 
 
 
