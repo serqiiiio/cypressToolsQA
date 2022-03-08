@@ -1,44 +1,54 @@
 class UserInfo {
-  clickEditBtnAlden() {
-    return cy.xpath(
-      "//div[@class='rt-tr-group'][contains(.,'Alden')] //span[@class='mr-2']"
-    );
+  constructor() {
+    this.user = "";
+  }
+
+  setUserName(name) {
+    this.user = name;
+  }
+
+  clickEditBtnUserNeeded(user) {
+    return cy.xpath(`//div[@class='rt-tr-group'][contains(.,'${user}')] //span[@class='mr-2']`);
+  }
+
+  clickDeleteBtnUserNeeded(user) {
+    return cy.xpath(`//div[@class='rt-tr-group'][contains(.,'${user}')] //span[@title='Delete']`);
   }
 
   newUserName() {
     return cy.xpath(
-      "//div[@class='rt-tr-group'][contains(.,'Sergio')] //div[@class='rt-td'][contains(.,'Sergio')]"
+      `(//div[@class='rt-tr-group'][contains(.,'${this.user}')]//div[@class='rt-td'])[1]`
     );
   }
 
   newUserLastname() {
     return cy.xpath(
-      "//div[@class='rt-tr-group'][contains(.,'Sergio')] //div[@class='rt-td'][contains(.,'Salinas')]"
+      `(//div[@class='rt-tr-group'][contains(.,'${this.user}')]//div[@class='rt-td'])[2]`
     );
   }
 
   newUserAge() {
     return cy.xpath(
-      "//div[@class='rt-tr-group'][contains(.,'Sergio')] //div[@class='rt-td'][contains(.,30)]"
+      `(//div[@class='rt-tr-group'][contains(.,'${this.user}')]//div[@class='rt-td'])[3]`
     );
   }
 
   newUserEmail() {
     return cy.xpath(
-      "//div[@class='rt-tr-group'][contains(.,'Sergio')] //div[@class='rt-td'][contains(.,'serqio.kay@gmail.com')]"
+      `(//div[@class='rt-tr-group'][contains(.,'${this.user}')]//div[@class='rt-td'])[4]`
     );
   }
 
   newUserSalary() {
     return cy.xpath(
-      "//div[@class='rt-tr-group'][contains(.,'Sergio')] //div[@class='rt-td'][contains(.,'100000')]"
+      `(//div[@class='rt-tr-group'][contains(.,'${this.user}')]//div[@class='rt-td'])[5]`
     );
   }
 
   newUserDepartment() {
     return cy.xpath(
-      "//div[@class='rt-tr-group'][contains(.,'Sergio')] //div[@class='rt-td'][contains(.,'automation')]"
+      `(//div[@class='rt-tr-group'][contains(.,'${this.user}')]//div[@class='rt-td'])[6]`
     );
   }
 }
-export default new UserInfo();
+export default UserInfo;

@@ -1,38 +1,40 @@
 import UserInfo from "../ui/locators/userInformation";
 
+const userInfo = new UserInfo();
+
 class NewUserfirstName {
   verifyData(data) {
-    UserInfo.newUserName().should("have.text", data);
+    userInfo.newUserName().should("have.text", data);
   }
 }
 
 class NewUserLastName {
   verifyData(data) {
-    UserInfo.newUserLastname().should("have.text", data);
+    userInfo.newUserLastname().should("have.text", data);
   }
 }
 
 class NewUserAge {
   verifyData(data) {
-    UserInfo.newUserAge().should("have.text", data);
+    userInfo.newUserAge().should("have.text", data);
   }
 }
 
 class NewUserEmail {
   verifyData(data) {
-    UserInfo.newUserEmail().should("have.text", data);
+    userInfo.newUserEmail().should("have.text", data);
   }
 }
 
 class NewUserDepartment {
   verifyData(data) {
-    UserInfo.newUserDepartment().should("have.text", data);
+    userInfo.newUserDepartment().should("have.text", data);
   }
 }
 
 class NewUserSalary {
   verifyData(data) {
-    UserInfo.newUserSalary().should("have.text", data);
+    userInfo.newUserSalary().should("have.text", data);
   }
 }
 
@@ -45,7 +47,8 @@ export class UserVerifyTextStrategyManager {
     this.userData = userData;
   }
 
-  verifyData(data) {
+  verifyData(data, name) {
+    userInfo.setUserName(name);
     this.userData.verifyData(data);
   }
 }

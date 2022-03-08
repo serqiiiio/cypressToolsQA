@@ -15,10 +15,10 @@ Cypress.Commands.add("fillRegistrationForm", (tableObjectValues) => {
   }
 });
 
-Cypress.Commands.add("verifyContent", (objectValues) => {
+Cypress.Commands.add("verifyContent", (objectValues, name) => {
   const verifyDataStrategy = new UserVerifyTextStrategyManager();
   for (const key in objectValues) {
     verifyDataStrategy.setStrategy(userDataClassLookup[key]);
-    verifyDataStrategy.verifyData(objectValues[key]);
+    verifyDataStrategy.verifyData(objectValues[key], name);
   }
 });
