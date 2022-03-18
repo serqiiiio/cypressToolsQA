@@ -14,12 +14,12 @@ Feature: User information
             | salary     | 1             |
             | department | test          |
         When I edit the user information with the following information
-            | firstName  | Sergio               |
-            | lastName   | Salinas              |
-            | email      | serqio.kay@gmail.com |
-            | age        | 30                   |
-            | salary     | 100000               |
-            | department | automation           |
+            | firstName  | Juan               |
+            | lastName   | Velez              |
+            | email      | juan.kay@gmail.com |
+            | age        | 29                 |
+            | salary     | 1                  |
+            | department | dev                |
         Then I should see the information updated in the table
 
 

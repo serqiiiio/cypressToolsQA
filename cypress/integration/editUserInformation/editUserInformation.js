@@ -4,9 +4,12 @@ import RegistrationForm from "../../ui/locators/registrationForm";
 import CreateUser from "../../ui/locators/createUser";
 
 const userInfo = new UserInfo();
+let oldUserName = "";
+let newUserName = "";
 
 Given("I have the UpdateUser user", (dataTable) => {
   const infoTable = dataTable.rowsHash();
+  oldUserName = infoTable.firstName;
   CreateUser.addBtn().click();
   cy.fillRegistrationForm(infoTable);
   RegistrationForm.confirmationBtn().click();
@@ -14,14 +17,16 @@ Given("I have the UpdateUser user", (dataTable) => {
 
 When("I edit the user information with the following information", (dataTable) => {
   const infoTable = dataTable.rowsHash();
+  newUserName = infoTable.firstName;
+
   cy.writeFile("cypress/fixtures/tableValues.json", infoTable);
   // eslint-disable-next-line cypress/no-unnecessary-waiting
   cy.wait(1000);
-  userInfo.clickEditBtnUserNeeded("UpdateUser").click();
+  userInfo.clickEditBtnUserNeeded(`${oldUserName}`).click();
   cy.fillRegistrationForm(infoTable);
   RegistrationForm.confirmationBtn().click();
 });
 
 After(() => {
-  userInfo.clickDeleteBtnUserNeeded("Sergio").click();
+  userInfo.clickDeleteBtnUserNeeded(`${newUserName}`).click();
 });
