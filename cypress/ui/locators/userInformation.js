@@ -16,7 +16,7 @@ class UserInfo {
    * @param {string} user is name of the selected user
    **/
   clickEditBtnUserNeeded(user) {
-    return cy.xpath(`//div[@class='rt-tr-group'][contains(.,'${user}')] //span[@class='mr-2']`);
+    return cy.xpath(`//div[@class='rt-tr-group'][contains(.,'${user}')]//span[@title='Edit']`);
   }
 
   /**
