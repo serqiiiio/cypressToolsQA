@@ -1,7 +1,7 @@
 import { Given, When, After } from "cypress-cucumber-preprocessor/steps";
-import UserInfo from "../ui/locators/userInformation";
-import RegistrationForm from "../ui/locators/registrationForm";
-import CreateUser from "../ui/locators/createUser";
+import UserInfo from "../../ui/locators/userInformation";
+import RegistrationForm from "../../ui/locators/registrationForm";
+import CreateUser from "../../ui/locators/createUser";
 
 const userInfo = new UserInfo();
 

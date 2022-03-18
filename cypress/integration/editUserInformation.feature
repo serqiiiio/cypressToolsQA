@@ -2,6 +2,11 @@ Feature: User information
     Scenario: Edit user information
         Given I am in webtables page
         And I have the UpdateUser user
+            #with the following
+            #with the UpdateUser
+            #add tags
+            #change hardcode values
+            #sufix cahnge random values
             | firstName  | UpdateUser    |
             | lastName   | Test          |
             | email      | test@test.com |

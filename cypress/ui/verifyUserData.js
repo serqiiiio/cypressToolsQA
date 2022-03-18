@@ -1,4 +1,4 @@
-import UserInfo from "../ui/locators/userInformation";
+import UserInfo from "./locators/userInformation";
 
 const userInfo = new UserInfo();
 

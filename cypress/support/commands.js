@@ -1,11 +1,5 @@
-import {
-  RegistrationFormStrategyManager,
-  fieldClassLookup
-} from "../integration/ui/registrationForm";
-import {
-  UserVerifyTextStrategyManager,
-  userDataClassLookup
-} from "../integration/ui/verifyUserData";
+import { RegistrationFormStrategyManager, fieldClassLookup } from "../ui/registrationForm";
+import { UserVerifyTextStrategyManager, userDataClassLookup } from "../ui/verifyUserData";
 
 /**
  * The function fills the registration form of the required text boxes.
