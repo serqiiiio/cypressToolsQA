@@ -7,7 +7,7 @@ const userInfo = new UserInfo();
 let oldUserName = "";
 let newUserName = "";
 
-Given("I have the UpdateUser user", (dataTable) => {
+Given("I have the following user", (dataTable) => {
   const infoTable = dataTable.rowsHash();
   oldUserName = infoTable.firstName;
   CreateUser.addBtn().click();

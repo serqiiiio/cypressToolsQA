@@ -1,3 +1,4 @@
+@Create
 Feature: User information
     Scenario: Create user information
         Given I am in webtables page
