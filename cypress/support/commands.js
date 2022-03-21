@@ -1,25 +1,27 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import { RegistrationFormStrategyManager, fieldClassLookup } from "../ui/registrationForm";
+import { UserVerifyTextStrategyManager, userDataClassLookup } from "../ui/verifyUserData";
+
+/**
+ * The function fills the registration form of the required text boxes.
+ * @param {JSON} tableObjectValues is a Json of the data tables.
+ */
+Cypress.Commands.add("fillRegistrationForm", (tableObjectValues) => {
+  const registrationFormStrategy = new RegistrationFormStrategyManager();
+  for (const key in tableObjectValues) {
+    registrationFormStrategy.setStrategy(fieldClassLookup[key]);
+    registrationFormStrategy.fillValue(tableObjectValues[key]);
+  }
+});
+
+/**
+ * The function verify the text content of the required text boxes.
+ * @param {JSON} objectValues is a Json of the data used to fill the text boxes.
+ * @param {string} name is the user name that we are going to verify the data.
+ */
+Cypress.Commands.add("verifyContent", (objectValues, name) => {
+  const verifyDataStrategy = new UserVerifyTextStrategyManager();
+  for (const key in objectValues) {
+    verifyDataStrategy.setStrategy(userDataClassLookup[key]);
+    verifyDataStrategy.verifyData(objectValues[key], name);
+  }
+});
