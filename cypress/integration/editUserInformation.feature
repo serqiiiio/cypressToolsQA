@@ -1,4 +1,4 @@
-@Edit
+@Edit @Functional @Tc002
 Feature: User information
     Scenario: Edit user information
         Given I am in webtables page
